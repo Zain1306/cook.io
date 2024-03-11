@@ -4,12 +4,7 @@ import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors({
-    origin: ['http://localhost:3000'],
-    credentials: true,
-    optionsSuccessStatus: 200,
-  });
-
+  app.enableCors(); // Enable CORS for all routes
   await app.listen(3000);
   Logger.debug(`Server Started http:localhost:3000`);
   Logger.debug(`Database:${process.env.DATABASE_NAME}`);

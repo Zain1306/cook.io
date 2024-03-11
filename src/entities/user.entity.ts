@@ -8,7 +8,7 @@ export class User {
   id: string;
 
   @Index('user-mobile-index')
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: 'varchar', nullable: true })
   mobile: string;
 
   @Column({ type: 'varchar', nullable: false })

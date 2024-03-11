@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { RecipeModule } from './recipe/recipe.module';
 import { Recipe } from './entities/recipe.entity';
 import { User } from './entities/user.entity';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { User } from './entities/user.entity';
       entities: [Recipe,User],
       synchronize: true,
     }),
-    RecipeModule,
+   UsersModule,
+   RecipeModule,
   ],
 })
 export class AppModule {}
